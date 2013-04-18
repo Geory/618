@@ -14,25 +14,54 @@
 
 @implementation MainBoard
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+
+
+
+-(void)creatUI{
+    
+}
+
+-(void)deleteUI{
+    
+}
+
+//dyci
+- (void)updateOnClassInjection;{
+    if (!self.firstEnter) {
+        [self deleteUI];
+        [self creatUI];
     }
-    return self;
 }
 
-- (void)viewDidLoad
+// BeeUIBoard signal goes here
+- (void)handleUISignal_BeeUIBoard:(BeeUISignal *)signal
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //    [super handleUISignal:signal];
+    
+    if ( [signal is:BeeUIBoard.CREATE_VIEWS] )
+	{
+        [self creatUI];
+	}
+	else if ( [signal is:BeeUIBoard.DELETE_VIEWS] )
+	{
+        [self deleteUI];
+	}
+	else if ( [signal is:BeeUIBoard.LOAD_DATAS] )
+	{
+        
+	}
+	else if ( [signal is:BeeUIBoard.WILL_APPEAR] )
+	{
+        
+	}
+	else if ( [signal is:BeeUIBoard.DID_DISAPPEAR] )
+	{
+        
+	}else if ( [signal is:BeeUIBoard.WILL_DISAPPEAR] )
+	{
+        
+        
+	}
 }
 
 @end

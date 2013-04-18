@@ -10,4 +10,6 @@
 
 @interface MainController : BeeController
 
+AS_MESSAGE(LOGIN)
+
 @end
